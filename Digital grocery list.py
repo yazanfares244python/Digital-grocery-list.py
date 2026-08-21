@@ -335,27 +335,27 @@ class DigitalGroceryListCLI(DigitalGroceryList):
             print("12. Exit")
             self.option = input("Enter your option(1-12) ->: ")
             if self.option == '1':
-                self.add_item_info(self)
+                DigitalGroceryList.add_item_info(self)
             elif self.option == '2':
-                self.display_grocery_list(self)
+                DigitalGroceryList.display_grocery_list(self)
             elif self.option == '3':
-                self.delete_item(self)
+                DigitalGroceryList.delete_item(self)
             elif self.option == '4':
-                self.reset_grocery_list(self)
+                DigitalGroceryList.reset_grocery_list(self)
             elif self.option == '5':
-                self.edit_item_info(self)
+                DigitalGroceryList.edit_item_info(self)
             elif self.option == '6':
-                self.display_total_price(self)
+                DigitalGroceryList.display_total_price(self)
             elif self.option == '7':
-                self.display_amount_of_items(self)
+                DigitalGroceryList.display_amount_of_items(self)
             elif self.option == '8':
-                self.mark_item(self)
+                DigitalGroceryList.mark_item(self)
             elif self.option == '9':
-                self.unmark_item(self)
+                DigitalGroceryList.unmark_item(self)
             elif self.option == '10':
-                self.search_item_info(self)
+                DigitalGroceryList.search_item_info(self)
             elif self.option == '11':
-                self.set_and_check_budget(self)
+                DigitalGroceryList.set_and_check_budget(self)
             elif self.option == '12':
                 print("Ok wait a moment...")
                 sleep(1.5)
