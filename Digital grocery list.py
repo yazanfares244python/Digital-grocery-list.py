@@ -375,7 +375,7 @@ class DigitalGroceryListData:
     # Creating the function that reads the data from the file to the program
     def read_data(self):
         # Check if the file exists
-        if Path("grocery_list.json").exists():
+        if Path("grocery_list.json").is_file():
             with open("grocery_list.json", "r") as f:
                 self.grocery_list = json.load(f)
     # Creating the function that writes the data from the program to the file
