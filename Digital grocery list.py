@@ -382,5 +382,5 @@ class DigitalGroceryListData:
     def write_data(self):
         with open("grocery_list.json", "w") as f:
             json.dump(self.grocery_list, f)
-grocery_list_app = DigitalGroceryListCLI()
-grocery_list_app.display_menu()
+grocery_list = DigitalGroceryListCLI().display_menu()
+
