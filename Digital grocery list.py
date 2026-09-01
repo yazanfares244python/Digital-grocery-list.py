@@ -165,7 +165,7 @@ class DigitalGroceryList:
                             while True:
                                 try:
                                     self.price = float(input(f"Enter the new price of one {self.item} ->: "))
-                                    if self.price < 0:
+                                    if self.price <= 0:
                                         print("Enter a valid price that is bigger than 0")
                                     else:
                                         break
