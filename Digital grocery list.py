@@ -126,8 +126,8 @@ class DigitalGroceryList:
                             self.item = input(f"Enter the new version of {self.item} ->: ").capitalize()
                             if not self.item:
                                 print('Enter a valid item')
-                            elif any(self.item == item_info["Item"] for item_info in self.grocery_list):
-                                print("\nItem already found(Delete the old one)")
+                            elif item_info["Item"] == self.item:
+                                print("\nThe item is already the same")
                                 break
                             else:
                                 item_info["Item"] = self.item
@@ -147,13 +147,13 @@ class DigitalGroceryList:
                                     self.amount = int(input(f"Enter the new amount of {self.item}(s) you got ->: "))
                                     if self.amount <= 0:
                                         print("Enter a valid amount that is bigger than 0")
+                                    elif item_info["Amount"] == self.amount:
+                                        print("\nThe amount is already the same")
+                                        break
                                     else:
                                         break
                                 except ValueError:
                                     print("Invalid amount")
-                            item_info["Amount"] = self.amount
-                            item_info["Price"] *= item_info["Amount"]
-                            print("\nThe item's amount has been edited alongside its price")
                             break
                         else:
                             continue
@@ -167,12 +167,15 @@ class DigitalGroceryList:
                                     self.price = float(input(f"Enter the new price of one {self.item} ->: "))
                                     if self.price <= 0:
                                         print("Enter a valid price that is bigger than 0")
+                                    elif item_info["Price"] == self.price:
+                                        print("\nThe price is already the same")
+                                        break
                                     else:
+                                        item_info["Price"] = self.price*item_info["Amount"]
+                                        print(f"\nThe price has been edited into {item_info['Price']}")
                                         break
                                 except ValueError:
                                     print("Invalid price")
-                            item_info["Price"] = self.price*item_info["Amount"]
-                            print(f"\nThe price has been edited into {item_info['Price']}")
                             break
                         else:
                             continue
@@ -184,6 +187,9 @@ class DigitalGroceryList:
                                 self.category = input(f"Enter the new category of {self.item} ->: ").capitalize()
                                 if not self.category:
                                     print("Enter a valid category")
+                                elif self.category == item_info["Category"]:
+                                    print("\nThe category is already the same")
+                                    break
                                 else:
                                     break
                             item_info["Category"] = self.category
